@@ -11,6 +11,18 @@ homepage = "https://github.com/anemoi-hash/anemoi-rust"
 keywords = ["cryptography", "hash", "hash-function", "anemoi", "sponge", "compression", "zero-knowledge"]
 categories = ["cryptography"]
 
+
+
+[patch.crates-io]
+ark-std = { git = "https://github.com/arkworks-rs/utils" }
+ark-ec = { git = "https://github.com/arkworks-rs/algebra" }
+ark-ff = { git = "https://github.com/arkworks-rs/algebra" }
+ark-serialize = { git = "https://github.com/arkworks-rs/algebra" }
+ark-bls12-381 = { git = "https://github.com/arkworks-rs/algebra" }
+ark-curve25519 = { git = "https://github.com/arkworks-rs/algebra" }
+ark-pallas = { git = "https://github.com/arkworks-rs/algebra" }
+ark-vesta = { git = "https://github.com/arkworks-rs/algebra" }
+
 [dependencies]
 ark-ff = { version="^0.4.0", default-features = false }
 ark-bls12-377 = { version="^0.4.0", default-features = false, optional = true }
@@ -31,9 +43,9 @@ criterion = "0.3"
 [features]
 default = [
     "std",
-    "bls12_377",
+    # "bls12_377",
     "bls12_381",
-    "bn_254",
+    # "bn_254",
     "ed_on_bls12_377",
     "jubjub",
     "pallas",
